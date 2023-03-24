@@ -1,0 +1,73 @@
+{% extends 'shablon2.html' %}
+{% load movie_tag %}
+{% load static %}
+
+{% block title %}
+Кино
+{% endblock %}
+
+{% block aside %}
+        <div id="clock"></div>
+        <script>
+            setInterval(() => {
+                let date = new Date()
+                let clock = document.getElementById('clock')
+                clock.innerHTML =
+                    date.getHours()+':'+
+                    date.getMinutes()+':'+
+                    date.getSeconds()
+                },1000);
+        </script>
+        <div>
+            <label class="tegg">Категории
+                <ul>
+                    {% get_category as categories %}
+                    {% for category in categories %}
+                        <li><a href='kino'>{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </label>
+        </div>
+        <form action="{% url 'filter' %}" method="get">
+            <ul>
+                {% for genre in view.get_genres %}
+                    <li>
+                        <input type="checkbox" class="chec" name="genre" value="{{ genre.id }}">
+                        <span class="cet">{{ genre.name }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for movie in view.get_years %}
+                    <li>
+                        <input type="checkbox" class="chec" name="year" value="{{ movie.year }}">
+                        <span class="cet">{{ movie.year }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="submit">Найти</button>
+        </form>
+{% endblock %}
+
+{% block body %}
+    {% for el in movie_list %}
+        <div class="teni">
+            <div class="content">
+                <a href="{% url 'detail' el.url %}" class="dd">
+                    <div class="img">
+                        <img src="{{ el.poster.url }}" alt="">
+                    </div>
+                    <div class="tittle">
+                        <h5>
+                        {{ el.title }}
+                        </h5>
+                    </div>
+                    <div class="tagline">
+                        {{ el.tagline }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% include 'pagination.html' %}
+{% endblock %}

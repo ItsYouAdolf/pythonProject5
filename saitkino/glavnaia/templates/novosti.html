@@ -1,0 +1,33 @@
+{% extends 'shablon2.html' %}
+{% load movie_tag %}
+
+{% block title %}
+Кино
+{% endblock %}
+
+{% block aside %}
+
+{% endblock %}
+
+{% block body %}
+    {% for el in movie2_list %}
+        <div class="teni">
+            <div class="content">
+                <a href="{% url 'detail2' el.url %}" class="dd">
+                    <div class="img">
+                        <img src="{{ el.poster.url }}" alt="">
+                    </div>
+                    <div class="tittle">
+                        <h5>
+                        {{ el.title }}
+                        </h5>
+                    </div>
+                    <div class="tagline">
+                        {{ el.tagline }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% include 'pagination.html' %}
+{% endblock %}

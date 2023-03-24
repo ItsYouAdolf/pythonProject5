@@ -1,0 +1,38 @@
+{% extends 'shablon2.html' %}
+{% load movie_tag %}
+{% load static %}
+
+{% block title %}
+Актеры и режисеры
+{% endblock %}
+
+
+{% block body %}
+        <div class="teniaa">
+            <div class="contentaa">
+                <div class="imgaa">
+                    <img src="{{ actor.image.url }}" alt="">
+                </div>
+                <div class="booka">
+                    <p><b>Имя:</b>{{ actor.name }}</p>
+                    <p><b>Возраст:</b>{{ actor.age }} лет</p>
+                    <p>
+                        <b>режиссер:</b>
+                            {% for el in actor.film_director.all %}
+                                    {{ el.title }},
+                            {% endfor %}
+                    </p>
+                    <p>
+                        <b>актер:</b>
+                            {% for el in actor.film_actor.all %}
+                                    {{ el.title }},
+                            {% endfor %}
+                    </p>
+                </div>
+                <div class="ffa">
+                    <h4>Описание</h4>
+                    <p>{{ actor.description|safe }}<p>
+                </div>
+            </div>
+        </div>
+{% endblock %}

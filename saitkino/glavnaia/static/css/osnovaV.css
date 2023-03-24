@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.container {
+    width: 100%;
+    min-height: 165vh;
+    background: linear-gradient(45deg, #0000ff, #AABBCC);
+    padding: 20px;
+}
+
+aside {
+    float: left;
+    width: 8%;
+    min-height: 165vh;
+    border-right: 4px solid #7FFFD4;
+    background: #fff;
+}
+
+aside #clock {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+div.teni div.content {
+    width: 308px;
+    height: 550px;
+    margin-left: 7px;
+}
+
+div.teni div.content {
+    background-color: rgba(192, 192, 192, 0.3);
+}
+
+div.teni {
+    width: 308px;
+    height: 550px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+div.teni {
+    background-color: rgba(192, 192, 192, 0.1);
+}
+
+div.teni {
+    border-radius: 10px;
+}
+
+div.teni div.content {
+    border-radius: 10px;
+}
+
+div.teni {
+    float: left;
+}
+
+div.teni div.content a.dd div.tittle {
+    text-align: center;
+    margin-top: 5px;
+}
+
+div.teni div.content a.dd div.tagline {
+    text-align: center;
+    margin-top: 5px;
+    border-top: 2px solid #c0c0c0;
+}
+
+div.teni div.content a.dd div.img img {
+    height: 430px;
+    width: 300px;
+    border: 1px solid #c0c0c0;
+}
+
+div.tenia div.contenta {
+    width: 1198px;
+    height:1300px;
+    margin-left: 7px;
+}
+
+div.teni div.content a.dd {
+    text-decoration: none;
+}
+
+div.teni div.content a.dd {
+    color: #1C1C1C
+}
+
+div.teni div.content a.dd:hover {
+    color: #1C1C1C
+}
+
+div.tenia div.contenta {
+    background-color: rgba(192, 192, 192, 0.3);
+}
+
+div.tenia {
+    width: 1198px;
+    height: 1300px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+div.tenia {
+    background-color: rgba(192, 192, 192, 0.1);
+}
+
+div.tenia {
+    border-radius: 10px;
+}
+
+div.tenia div.contenta {
+    border-radius: 10px;
+}
+
+div.tenia div.contenta {
+    float: left;
+}
+
+div.tenia div.contenta div.imga img {
+    height: 430px;
+    width: 300px;
+    float: left;
+    border: 1px solid #c0c0c0;
+}
+
+div.tenia div.contenta div.book {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    text-align: center;
+}
+
+div.tenia div.contenta div.ff {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+div.tenia {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+div.tenia div.contenta div.book p {
+    border-bottom: 1px solid #c0c0c0;
+}
+
+div.tenia div.contenta div.kadr img {
+    width: 300px;
+    height: 200px;
+    margin: 49px;
+    border: 2px solid #c0c0c0;
+    float: left;
+}
+
+div.ten {
+    width: 1204px;
+    height:400px;
+}
+
+div.ten {
+    background-color: rgba(192, 192, 192, 0.3);
+    margin-left: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+div.ten form.mt {
+    background-color: rgba(192, 192, 192, 0.3);
+    height: 400px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+div.ten form.mt div.qwe textarea {
+    width: 400px;
+    height: 250px;
+    margin-right: 90px;
+    margin-top: 15px;
+    border: 3px solid #c0c0c0;
+}
+
+div.ten form.mt div.jan div.teq input {
+    margin-right: 54px;
+    margin-top: 5px;
+    border: 3px solid #c0c0c0;
+}
+
+div.ten form.mt button {
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    border: 3px solid #c0c0c0;
+}
+
+div.ten form.mt div.jan div.tre input {
+    border: 3px solid #c0c0c0;
+    margin-right: 30px;
+}
+
+
+div.amg {
+    text-align: center;
+}
+
+div.amg div.zxc {
+    background-color: rgba(192, 192, 192, 0.2);
+    width: 400px;
+    margin-top: 25px;
+    margin-left: 440px;
+    border-radius: 10px;
+}
+
+div.amg div.zxc div.mcdc {
+    background-color: rgba(192, 192, 192, 0.3);
+    width: 400px;
+    margin-left: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+div.amg div.zxc div.mcdc img {
+    border-radius: 30px;
+    width: 75px;
+    height: 75px;
+}
+
+div.amg div.zxc div.mcdc a {
+    color: #000000
+}
+
+div.amg div.zxc div.mcdc a:hover {
+    color: #000000
+}
+div.teniaa {
+    width: 1198px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+div.teniaa div.contentaa {
+    width: 1198px;
+    margin-left: 7px;
+}
+
+
+div.teniaa div.contentaa {
+    background-color: rgba(192, 192, 192, 0.3);
+}
+
+
+div.teniaa {
+    background-color: rgba(192, 192, 192, 0.1);
+}
+
+div.teniaa {
+    border-radius: 10px;
+}
+
+div.teniaa div.contentaa {
+    border-radius: 10px;
+}
+
+div.teniaa div.contentaa {
+    float: left;
+}
+
+div.teniaa div.contentaa div.imgaa img {
+    height: 430px;
+    width: 300px;
+    float: left;
+    border: 1px solid #c0c0c0;
+}
+
+div.teniaa div.contentaa div.booka {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    text-align: center;
+}
+
+div.teniaa div.contentaa div.ffa {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+div.teniaa {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+div.teniaa div.contentaa div.booka p {
+    border-bottom: 1px solid #c0c0c0;
+}
+
+div.teniaa div.contentaa div.kadra img {
+    width: 300px;
+    height: 200px;
+    margin: 49px;
+    border: 2px solid #c0c0c0;
+    float: left;
+}
+
+
+div.tert {
+    text-align: center;
+    float: bottom;
+}

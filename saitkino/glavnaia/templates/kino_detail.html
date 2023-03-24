@@ -1,0 +1,113 @@
+{% extends 'shablon2.html' %}
+{% load movie_tag %}
+{% load static %}
+
+{% block title %}
+Кино
+{% endblock %}
+
+
+{% block body %}
+        <div class="tenia">
+            <div class="contenta">
+                <div class="imga">
+                    <img src="{{ movie.poster.url }}" alt="">
+                </div>
+                <div class="book">
+                    <p><b>Название:</b>{{ movie.title }}</p>
+                    <p><b>Слоган:</b>{{ movie.tagline }}</p>
+                    <p><b>Дата Выхода:</b>{{ movie.year }}</p>
+                    <p><b>Страна:</b>{{ movie.country }}</p>
+                    <p>
+                        <b>режиссер:</b>
+                            {% for el in movie.directors.all %}
+                                <a href="{% url 'actor' el.name %}">
+                                    {{ el.name }}
+                                </a>
+                            {% endfor %}
+                    </p>
+                    <p><b>актеры:</b>
+                            {% for el in movie.actors.all %}
+                                <a href="{% url 'actor' el.name %}">
+                                    {{ el.name }}
+                                </a>
+                            {% endfor %}
+                    </p>
+                    <p><b>жанры:</b>
+                            {% for el in movie.genres.all %}
+                                {{ el.name }}
+                            {% endfor %}
+                    </p>
+                    <p><b>Примьера в мире:</b>{{ movie.world_premiere }}</p>
+                    <p><b>Бюджет:</b>{{ movie.budget }}$</p>
+                    <p><b>Сборы в США:</b>{{ movie.fees_in_usa }}$</p>
+                    <p><b>Сборы в Мире:</b>{{ movie.fees_in_world }}$</p>
+                    <p><b>Категория:</b>{{ movie.category }}</p>
+                </div>
+                <div class="ff">
+                    <h4>Описание</h4>
+                    <p>{{ movie.description|safe }}<p>
+                </div>
+                <div class="kadr">
+                    {% for image in movie.movieshots_set.all %}
+                        <img src="{{ image.image.url }}" class="image" alt="{{ image.description }}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="ten">
+            <form action="{% url 'add_review' movie.id %}" method="post" class="mt" id="formReview">
+                {% csrf_token %}
+                <input type="hidden" name="parent" id="contactparent" value="">
+                <div class="qwe">
+                    <label for="contactcomment" class="edticom">
+                        <b>Ваш Комментарий</b>
+                    </label>
+                    <textarea class="conact" rows="5" name="text"
+                    id="contactcomment" required=""></textarea>
+                </div>
+                <div class="jan">
+                    <div class="tre">
+                        <label for="contactusername" class="caotuser">
+                            <b>Имя</b>
+                        </label>
+                        <input type="text" class="reet" name="name" id="contactusername" required="">
+                    </div>
+                    <div class="teq">
+                        <label for="contactemail" class="ytu">
+                            <b>E-mail</b>
+                        </label>
+                        <input type="email" class="pol" name="email" id="contactemail" required="">
+                    </div>
+                </div>
+                <button type="submit" class="submit">
+                    Отправить
+                </button>
+            </form>
+        </div>
+        <div class="amg">
+            <div class="zxc">
+                {% for review in movie.reviews_set.all %}
+                    <div class="mcdc">
+                        <img src="{% static 'img/ad.jpg' %}" class="tut" alt="image">
+                        <div class="rty">
+                            <h5 class="poi">
+                                {{ review.name }}
+                            </h5>
+                            <p class="yui">
+                                {{ review.text }}
+                            </p>
+                            <a href="#formReview" onclick="addReview('{{ review.name }}', '{{ review.id }}')">Ответить</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <script>
+        function addReview(name, id) {
+            document.getElementById('contactparent').value = id;
+            document.getElementById('contactcomment').innerText = `${name},`
+        }
+        </script>
+{% endblock %}
+{{ el.poster.ul }}

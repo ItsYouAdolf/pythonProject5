@@ -1,0 +1,49 @@
+{% extends 'shablon2.html' %}
+{% load static %}
+
+{% block title %}
+Кино
+{% endblock %}
+{% block body %}
+     <div class="tenia">
+                <div class="contenta">
+                    <div class="imga">
+                        <img src="{{ movie2.poster.url }}" alt="">
+                    </div>
+                    <div class="book">
+                        <p><b>Название:</b>{{ movie2.title }}</p>
+                        <p><b>Слоган:</b>{{ movie2.tagline }}</p>
+                        <p><b>Дата Выхода:</b>{{ movie2.year }}</p>
+                        <p><b>Страна:</b>{{ movie2.country }}</p>
+                        <p>
+                            <b>режиссер:</b>
+                                {% for el in movie2.directors.all %}
+                                        {{ el.name }}
+                                {% endfor %}
+                        </p>
+                        <p><b>актеры:</b>
+                                {% for el in movie2.actors.all %}
+                                        {{ el.name }}
+                                {% endfor %}
+                        </p>
+                        <p><b>жанры:</b>
+                                {% for el in movie2.genres.all %}
+                                    {{ el.name }}
+                                {% endfor %}
+                        </p>
+                        <p><b>Примьера в мире:</b>{{ movie2.world_premiere }}</p>
+                        <p><b>Бюджет:</b>{{ movie2.budget }}$</p>
+                        <p><b>Категория:</b>{{ movie2.category }}</p>
+                    </div>
+                    <div class="ff">
+                        <h4>Описание</h4>
+                        <p>{{ movie2.description|safe }}<p>
+                    </div>
+                    <div class="kadr">
+                        {% for image in movie2.movieshots2_set.all %}
+                            <img src="{{ image.image.url }}" class="image" alt="{{ image.description }}">
+                        {% endfor %}
+                    </div>
+                </div>
+     </div>
+{% endblock %}
